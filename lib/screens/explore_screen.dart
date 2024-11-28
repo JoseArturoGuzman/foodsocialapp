@@ -6,8 +6,12 @@ class ExploreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Card1(),
+    //return Center(
+    //  child: Card1(),
+    //);
+
+    return Container(
+      color: Colors.blue,
     );
   }
 }

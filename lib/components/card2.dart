@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:socialfoodapp/components/author_card.dart';
 import 'package:socialfoodapp/food_theme.dart';
+import 'package:socialfoodapp/models/explore_recipe.dart';
 
 class Card2 extends StatelessWidget {
-  const Card2({super.key});
+  const Card2({super.key, required this.recipe});
+
+  final ExploreRecipe recipe;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,7 @@ class Card2 extends StatelessWidget {
           height: 450
         ),
         decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/magazine_pics/mag2.png'),
+          image: DecorationImage(image: AssetImage(recipe.backgroundImage),
           fit: BoxFit.cover
         ),
         borderRadius: BorderRadius.circular(10)
@@ -22,23 +25,23 @@ class Card2 extends StatelessWidget {
         child: Column(
           children: [
             AuthorCard(
-              authorName: 'Mike Metz',
-              title: 'Smothies Connoisseur',
-                imageProvider: AssetImage('assets/profile_pics/person_katz.jpeg')
+              authorName: recipe.authorName,
+              title: recipe.title,
+                imageProvider: AssetImage(recipe.authorImage)
             ),
             Expanded(child: Stack(
               children: [
                 Positioned(
                   bottom: 16,
                   right: 16,
-                  child: Text('Recipe', style: FoodTheme.lightTextTheme.displayLarge,)
+                  child: Text(recipe.title, style: FoodTheme.lightTextTheme.displayLarge,)
                 ),
                 Positioned(
                   bottom: 70,
                   left: 16,
                   child: RotatedBox(
                     quarterTurns: 3,
-                    child: Text('Smoothies', style: FoodTheme.lightTextTheme.displayLarge,)))
+                    child: Text(recipe.subtitle, style: FoodTheme.lightTextTheme.displayLarge,)))
               ],
             ))
           ],

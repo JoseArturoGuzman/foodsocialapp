@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:socialfoodapp/food_theme.dart';
+import 'package:socialfoodapp/models/explore_recipe.dart';
 
 class Card1 extends StatelessWidget {
-  const Card1({super.key});
+  const Card1({super.key, required this.recipe});
   
   final String category = 'Editor\'s Choice';
   final String title = 'Art of Dought';
   final String description = 'Learn to make a Choice';
   final String chef = 'Ray Wenderlinch';
+
+  final ExploreRecipe recipe;
 
   @override
   Widget build(BuildContext context) {
@@ -19,27 +22,27 @@ class Card1 extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/magazine_pics/mag1.png'),
+            image: AssetImage(recipe.backgroundImage),
             fit: BoxFit.cover
           ),
           borderRadius: BorderRadius.circular(10)
         ),
         child: Stack(
           children: [
-            Text(category, style: FoodTheme.darkTextTheme.bodyLarge),
+            Text(recipe.cardType, style: FoodTheme.darkTextTheme.bodyLarge),
             Positioned(
               top: 20,
-                child: Text(title, style: FoodTheme.darkTextTheme.titleLarge)
+                child: Text(recipe.title, style: FoodTheme.darkTextTheme.titleLarge)
             ),
             Positioned(
               bottom: 30,
                 right: 0,
-                child: Text(description, style: FoodTheme.darkTextTheme.bodyLarge)
+                child: Text(recipe.description, style: FoodTheme.darkTextTheme.bodyLarge)
             ),
             Positioned(
                 bottom: 10,
                 right: 0,
-                child: Text(chef, style: FoodTheme.darkTextTheme.bodyLarge)
+                child: Text(recipe.authorName, style: FoodTheme.darkTextTheme.bodyLarge)
             ),
           ],
         ),

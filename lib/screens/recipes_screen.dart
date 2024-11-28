@@ -6,6 +6,10 @@ class RecipesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card2();
+    //return Card2();
+
+    return Container(
+      color: Colors.blue,
+    );
   }
 }
