@@ -6,7 +6,7 @@ import 'package:socialfoodapp/models/explore_recipe.dart';
 import 'package:socialfoodapp/models/post.dart';
 import 'package:socialfoodapp/models/simple_recipe.dart';
 
-class ApiServuce{
+class ApiService{
 
   //Cargar una data desde un archivo (json)
   Future<String> _loadAssets(String path) async{
@@ -71,7 +71,7 @@ Future<List<ExploreRecipe>> _getTodayRecipes() async {
     json["recipes"].forEach((value){
       recipes.add(ExploreRecipe.fromJson(value));
     });
-
+    
     return recipes;
 }
 
