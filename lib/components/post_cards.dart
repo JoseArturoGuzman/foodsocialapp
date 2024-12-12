@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:socialfoodapp/components/circle_image.dart';
+import 'package:socialfoodapp/food_theme.dart';
 import 'package:socialfoodapp/models/post.dart';
 
 class PostCards extends StatelessWidget {
@@ -10,7 +11,7 @@ class PostCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 12),
+      margin: EdgeInsets.symmetric(vertical: 9, horizontal: 10),
       padding: EdgeInsets.all(12),
 
       decoration: BoxDecoration(
@@ -38,16 +39,16 @@ class PostCards extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment:  CrossAxisAlignment.start,
                   children: [
-                    Text('Nombre del cheft'),
-                    Text("Usuario"),
+                    Text('Nombre del cheft', style: FoodTheme.lightTextTheme.displaySmall,),
+                    Text("Usuario", style: FoodTheme.lightTextTheme.displaySmall,),
                   ],
                 ),
               ),
-              Text(post.timestamp + " Minutos")
+              Text(post.timestamp + " Minutos", style: FoodTheme.lightTextTheme.displaySmall,)
             ],
           ),
-          Text(post.comment),
-          Image.asset(post.foodPictureUrl, )
+          Text(post.comment, style: FoodTheme.lightTextTheme.displayMedium,),
+          Image.asset(post.foodPictureUrl, ),
         ],
       ),
     );
