@@ -41,7 +41,7 @@ class Card2 extends StatelessWidget {
                   left: 16,
                   child: RotatedBox(
                     quarterTurns: 3,
-                    child: Text(recipe.subtitle, style: FoodTheme.lightTextTheme.displayLarge,)))
+                    child: Text(recipe.subtitle, style: FoodTheme.lightTextTheme.displayLarge,),),)
               ],
             ))
           ],

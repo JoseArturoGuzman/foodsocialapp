@@ -15,7 +15,7 @@ class ExploreRecipe {
   final String backgroundImage;
   final String backgroundImageSource;
   final String message;
-  final String authorName;
+    final String authorName;
   final String role;
   final String authorImage;
   final int durationInMinutes;

@@ -36,8 +36,8 @@ class _AuthorCardState extends State<AuthorCard> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(widget.authorName, style: FoodTheme.lightTextTheme.bodyLarge,),
-                  Text(widget.title, style: FoodTheme.lightTextTheme.bodyLarge,)
+                  Text(widget.authorName, style: FoodTheme.darkTextTheme.bodyLarge,),
+                  Text(widget.title, style: FoodTheme.darkTextTheme.bodyLarge,)
                 ],
               )
             ],
