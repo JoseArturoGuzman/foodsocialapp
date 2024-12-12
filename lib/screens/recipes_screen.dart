@@ -3,6 +3,8 @@ import 'package:socialfoodapp/api/api_service.dart';
 import 'package:socialfoodapp/components/card2.dart';
 import 'package:socialfoodapp/models/simple_recipe.dart';
 
+import '../components/recipe_thubmnail.dart';
+
 class RecipesScreen extends StatelessWidget {
    RecipesScreen({super.key});
   final apiService = ApiService();
@@ -37,21 +39,12 @@ class RecipesGrid extends StatelessWidget {
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           itemBuilder: (context, index) {
             final simpleRecipe = recipes[index];
-            return Container(
-              child: Column(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.asset(simpleRecipe.dishImage, fit: BoxFit.cover,),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(simpleRecipe.title, maxLines: 1,style: Theme.of(context).textTheme.bodyLarge,)
-                ],
-              ),
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: RecipeThumbnail(simpleRecipe: simpleRecipe),
             );
           },
       );
   }
 }
+
