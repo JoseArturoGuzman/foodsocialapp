@@ -47,7 +47,7 @@ class PostCards extends StatelessWidget {
             ],
           ),
           Text(post.comment),
-          Image.asset(post.foodPictureUrl)
+          Image.asset(post.foodPictureUrl, )
         ],
       ),
     );
