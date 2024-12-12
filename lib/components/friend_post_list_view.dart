@@ -20,7 +20,7 @@ class FriendPostListView extends StatelessWidget {
           style: Theme.of(context).textTheme.displayLarge,
         ),
         Container(
-          height: 400,
+
           color: Colors.transparent,
           child: ListView.separated(
             itemCount: friendPosts.length,
